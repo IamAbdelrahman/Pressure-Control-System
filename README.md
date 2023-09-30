@@ -63,7 +63,7 @@ To ensure that the Pressure Control System operates correctly, follow these test
 **Expected Results:** The alarm LED should remain on for some milliseconds when triggered.
 
 ## Acknowlegement
-### Thanks to Eng.Keroles Khalil [Learn-In-Depth Diploma]
+### Thanks to Eng.Keroles Khalil [Learn-In-Depth Diploma Instructor]
 
 ## Contact Information
 
