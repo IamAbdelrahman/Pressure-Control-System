@@ -13,28 +13,13 @@
  */
 #include "GPIO.h"
 
-/**
- * @brief  Enable clock for GPIO Port A
- *
- * This function enables the clock for GPIO Port A, allowing it to function.
- *
- * @return GPIO_STATE_t indicating whether the clock enabling was successful.
- */
+
 GPIO_STATE_t enableClk(void)
 {
 	SET_BIT(APB2ENR, 2);
 	return GPIO_STATE_ENABLE_CLOCK;
 }
-/*------------------------------------------------------------------------------------------*/
 
-/**
- * @brief Initialize GPIO module.
- *
- * This function initializes the GPIO module by enabling the clock for GPIO peripherals,
- * specifically for Port A.
- *
- * @return GPIO_STATE_t indicating whether the initialization was successful.
- */
 GPIO_STATE_t gpioInit(void)
 {
 	if (enableClk() == GPIO_STATE_ENABLE_CLOCK)
@@ -46,20 +31,7 @@ GPIO_STATE_t gpioInit(void)
 		return GPIO_STATE_ERROR;
 	}
 }
-/*------------------------------------------------------------------------------------------*/
 
-/**
- * @brief Write a logic level to a GPIO pin.
- *
- * This function allows you to set a specific logic level (HIGH or LOW) on a GPIO pin
- * within a selected port (e.g., Port A).
- *
- * @param portName The name of the port to which the pin belongs (e.g., 'A').
- * @param pinNumber The number of the pin to be written.
- * @param value The logic level to set (HIGH or LOW).
- *
- * @return GPIO_STATE_t indicating the success or failure of the operation.
- */
 GPIO_STATE_t gpioWritePin(vuint8_t portName, vuint8_t pinNumber, vuint8_t value)
 {
 	switch (portName)
